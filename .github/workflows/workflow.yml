@@ -1,0 +1,10 @@
+on:
+  workflow_dispatch: {}
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps: 
+      - name: Hello
+         run: |
+           echo "Hello World"

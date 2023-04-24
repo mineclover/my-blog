@@ -1,12 +1,14 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// 상수 불러오는
+const github = require('./settingConstants.js').github
 
+// 기존
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
+  title: '개발 정보 모음',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
@@ -16,20 +18,15 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'mineclover',
+  projectName: 'my-blog',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ko',
+    locales: ['ko'],
   },
 
   presets: [
@@ -39,15 +36,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: github,
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: github,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -62,9 +55,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Softer Dev_blog',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Dev_blog',
           src: 'img/logo.svg',
         },
         items: [
@@ -75,8 +68,9 @@ const config = {
             label: 'Tutorial',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/front', label: 'front', position: 'left' },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: github,
             label: 'GitHub',
             position: 'right',
           },
@@ -120,7 +114,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: github,
               },
             ],
           },

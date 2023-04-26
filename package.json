@@ -17,7 +17,7 @@
     "setup": "git clone https://github.com/mineclover/ObsidianMarkdown-to-docusaurus.git macro && npm install --prefix ./macro",
     "macro": "npm start --prefix ./macro",
     "macro-commit": "npm run commit --prefix ./macro",
-    "upload": "git add . && git commit -m \"$(date '+%Y-%m-%d %H:%M:%S')\" && git push && npm run upload --prefix ./macro"
+    "upload": "git add . && git commit -m \"변경 사항 일괄 저장\" && git push && npm run upload --prefix ./macro"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.0",

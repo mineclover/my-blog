@@ -12,7 +12,12 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "sync": "git pull && npm run sync --prefix ./macro",
+    "setup": "git clone https://github.com/mineclover/ObsidianMarkdown-to-docusaurus.git macro && npm install --prefix ./macro",
+    "macro": "npm start --prefix ./macro",
+    "macro-commit": "npm run commit --prefix ./macro",
+    "commit": "git add . && git commit -m \"$(date '+%Y-%m-%d %H:%M:%S')\" && git push"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.0",

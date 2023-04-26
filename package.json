@@ -17,7 +17,7 @@
     "setup": "git clone https://github.com/mineclover/ObsidianMarkdown-to-docusaurus.git macro && npm install --prefix ./macro",
     "macro": "npm start --prefix ./macro",
     "macro-commit": "npm run commit --prefix ./macro",
-    "commit": "git add . && git commit -m \"$(date '+%Y-%m-%d %H:%M:%S')\" && git push"
+    "upload": "git add . && git commit -m \"$(date '+%Y-%m-%d %H:%M:%S')\" && git push && npm run upload --prefix ./macro"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.0",
@@ -26,7 +26,8 @@
     "clsx": "^1.2.1",
     "prism-react-renderer": "^1.3.5",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-playground": "file:.."
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.4.0",

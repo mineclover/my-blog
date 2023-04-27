@@ -17,7 +17,7 @@ const config = {
   url: 'https://mineclover.github.io',
   baseUrl: '/',
 
-  projectName: 'mineclover',
+  projectName: 'mineclover.github.io',
   organizationName: 'mineclover',
   trailingSlash: false,
   deploymentBranch: 'gh-pages',

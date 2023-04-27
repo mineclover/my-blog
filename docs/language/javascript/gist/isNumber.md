@@ -1,6 +1,6 @@
 ---
 date: 2023-04-01
-modified: 2023-04-24
+modified: 2023-04-27
 ---
 
 ## isNumber
@@ -16,20 +16,20 @@ NaN , Infinity 식별
 
 ```js
 const isNumber = (value: any) => {
-    if (value === null || value === undefined) {
+  if (value === null || value === undefined) {
+    return false;
+  }
+  if (typeof value === 'number') {
+    if (Number.isNaN(value)) {
       return false;
     }
-    if (typeof value === 'number') {
-      if (Number.isNaN(value)) {
-        return false;
-      }
-      if (!Number.isFinite(value)) {
-        return false;
-      }
-      return true;
+    if (!Number.isFinite(value)) {
+      return false;
     }
-    return false;
-  };
+    return true;
+  }
+  return false;
+};
 ```
 
 ## isNaN 사용
@@ -73,25 +73,25 @@ if (typeof value === 'number' || typeof value === 'string') {
 
 ```js
 const isNumber = (value: any) => {
-    if (value === null) {
+  if (value === null) {
     // if (value === null || typeof value === 'string') {
-      return false;
-      // Number에서 undefined 는 NaN으로 처리 됨
-    }
-    const dist = Number(value);
+    return false;
+    // Number에서 undefined 는 NaN으로 처리 됨
+  }
+  const dist = Number(value);
 
-    if (Number.isNaN(dist)) {
-      return false;
-    }
-    if (!Number.isFinite(dist)) {
-      return false;
-    }
-    return true;
-  };
+  if (Number.isNaN(dist)) {
+    return false;
+  }
+  if (!Number.isFinite(dist)) {
+    return false;
+  }
+  return true;
+};
 ```
 
 `value = Number(value);` 쓰다가 아래 린트 오류가 떠서 린트의 이유를 작성 했다
-[Error-no-param-reassign](../../../front/eslint/Error-no-param-reassign.md)
+[Error-no-param-reassign](../../../front/eslint/Error-no-param-reassign)
 
 내가 걱정하는 것은 '1234' 에 의한 숫자 에러인데
 `if (value === null || typeof value === 'string') {`

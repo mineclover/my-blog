@@ -1,10 +1,11 @@
 // @ts-check
 // 상수 불러오는
-const github = require('./settingConstants.js').github
 
 // 기존
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+// eslint-disable-next-line import/extensions
+const { github } = require('./settingConstants.js');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -13,15 +14,15 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: 'https://mineclover.github.io',
   baseUrl: '/',
 
+  projectName: 'mineclover',
   organizationName: 'mineclover',
-  projectName: 'my-blog',
+  trailingSlash: false,
+  deploymentBranch: 'gh-pages',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
@@ -68,7 +69,7 @@ const config = {
             label: 'Tutorial',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
-          { to: '/front', label: 'front', position: 'left' },
+          { to: '/blog', label: 'front', position: 'left' },
           {
             href: github,
             label: 'GitHub',
@@ -126,6 +127,6 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-}
+};
 
-module.exports = config
+module.exports = config;

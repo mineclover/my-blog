@@ -1,7 +1,8 @@
 ---
 date: 2023-03-24
-modified: 2023-04-24
+modified: 2023-04-27
 ---
+
 열심히 glob 로 만들어놨더니
 플러그인이 있다고 한다
 [GitHub - hannoeru/vite-plugin-pages: File system based route generator for ⚡️Vite](https://github.com/hannoeru/vite-plugin-pages)
@@ -22,20 +23,18 @@ modified: 2023-04-24
 
 잘 적용되서 빌드가 되게 되었고
 구조를 보아하니 md 파일을 js 으로 만들어서 저장했기 때문에, 한 페이지에서 포스팅한 것도 올릴 수 있게 됬다.. ㄷㄷ
+
 > 조작되는 설정을 잘 까보면 좀 더 낮은 의존성으로 md 파일을 읽게 할 수 있지 않을까 싶다
 
 ## How to use
 
 ```ts
-import { defineConfig } from "vite";
-import remarkRehypePlugin from "vite-plugin-remark-rehype";
+import { defineConfig } from 'vite';
+import remarkRehypePlugin from 'vite-plugin-remark-rehype';
 
 export default defineConfig({
-  plugins: [
-    remarkRehypePlugin(),
-  ],
+  plugins: [remarkRehypePlugin()],
 });
-
 ```
 
 ## Adding type support
@@ -52,10 +51,11 @@ In your tsconfig.json
 ```
 
 Or you can add a .d.ts file in your project root containing
+
 > 둘 중 하나만 하면 된다
 
 ```ts
-declare module "*.md" {
+declare module '*.md' {
   const html: string;
   export default html;
 }
@@ -67,7 +67,7 @@ declare module "*.md" {
 
 ![](file/vite-plugin-pages-2.png)
 
-import 목적으로 사용하지 않앗으나
+`import` 목적으로 사용하지 않앗으나
 사용하고자 한다면 위 링크처럼 된 변환식으로 호출한 js 데이터를 사용한다는 것으로 예측해볼 수 있었다
 그 이후는 플러그인 번들링 되기 전 소스를 보면 좀 도움이 된다
 

@@ -1,6 +1,6 @@
 ---
 date: 2023-04-03
-modified: 2023-04-24
+modified: 2023-04-27
 ---
 
 ternary operator
@@ -11,10 +11,10 @@ ternary operator
 
 ```jsx
 <div>
-	progressLoad / ProgressTotal:{' '}
-	{isNumber(progressLoad / ProgressTotal)
-		? `${((progressLoad / ProgressTotal) * 100).toFixed(2)}%`
-		: '파일을 넣어주세요'}
+  progressLoad / ProgressTotal:{' '}
+  {isNumber(progressLoad / ProgressTotal)
+    ? `${((progressLoad / ProgressTotal) * 100).toFixed(2)}%`
+    : '파일을 넣어주세요'}
 </div>
 ```
 

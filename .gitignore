@@ -1,4 +1,5 @@
 # Dependencies
+.env
 macro
 /node_modules
 

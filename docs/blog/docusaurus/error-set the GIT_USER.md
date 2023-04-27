@@ -4,6 +4,8 @@ modified: 2023-04-27
 ---
 배포 할 때
 `cmd /C 'set "GIT_USER=USER" && yarn deploy'` 를 쓰라고 한다
+
+cmd /C 'set "GIT_USER=mineclover" && yarn deploy'
 이걸 축약하기위해서 `set "GIT_USER=USER" && yarn deploy` 이라고 쓰면
 Please set the GIT_USER environment variable, or explicitly specify USE_SSH instead!
 

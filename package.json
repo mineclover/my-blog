@@ -8,7 +8,7 @@
     "build": "docusaurus clear && docusaurus start && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
-    "dd": "set GIT_USER=mineclover && yarn deploy",
+    "dd": "set \"GIT_USER=mineclover\" && yarn deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus clear && docusaurus serve",
     "write-translations": "docusaurus write-translations",

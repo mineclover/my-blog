@@ -1,0 +1,6 @@
+label: word-dictionary
+collapsible: true
+collapsed: false
+link:
+  type: generated-index
+  title: word-dictionary index

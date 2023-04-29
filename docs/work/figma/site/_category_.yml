@@ -1,0 +1,6 @@
+label: site
+collapsible: true
+collapsed: false
+link:
+  type: generated-index
+  title: site index

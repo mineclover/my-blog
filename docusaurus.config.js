@@ -6,6 +6,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // eslint-disable-next-line import/extensions
 const { github } = require('./settingConstants.js');
+// Reverse the sidebar items ordering (including nested category items)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {

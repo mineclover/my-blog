@@ -2,6 +2,7 @@
 .env
 macro
 /node_modules
+docs
 
 # Production
 /build

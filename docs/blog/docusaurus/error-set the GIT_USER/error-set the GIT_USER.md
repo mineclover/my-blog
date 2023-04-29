@@ -1,6 +1,7 @@
 ---
+sidebar_position: 3.2
 date: 2023-04-27
-modified: 2023-04-28
+modified: 2023-04-29
 ---
 배포 할 때
 `cmd /C 'set "GIT_USER=USER" && yarn deploy'` 를 쓰라고 한다

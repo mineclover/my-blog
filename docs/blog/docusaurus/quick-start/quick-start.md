@@ -1,6 +1,7 @@
 ---
+sidebar_position: 1
 date: 2023-04-24
-modified: 2023-04-27
+modified: 2023-04-29
 ---
 [개요 | Docusaurus](https://docusaurus.io/ko/docs)
 
@@ -70,4 +71,3 @@ tags 에 대한 유효한 정보는 찾지 못했다
 ```
 npm install --save @docusaurus/preset-classic
 ```
-

@@ -1,26 +1,24 @@
 ---
 date: 2023-03-12
-modified: 2023-04-28
+modified: 2023-04-29
 ---
 
 react-icon 에서 디폴트 값을 설정하는 것을 바로 넣어놨더니 문제가 생겼엇음
 
 ```tsx
+const data = {
+  size: '24px',
+  color: colors.Black,
+  style: { marginTop: '-2px', marginBottom: '-2px' },
+};
+
 function App() {
   return (
     <Provider store={store}>
-      q
       <PersistGate persistor={persistor}>
-        <IconContext.Provider
-          value={{
-            size: '24px',
-            color: colors.Black,
-            style: { marginTop: '-2px', marginBottom: '-2px' },
-          }}
-        >
+        <IconContext.Provider value={data}>
           <RouterProvider router={Router} />
         </IconContext.Provider>
-
         <GlobalStyles />
       </PersistGate>
     </Provider>
@@ -52,7 +50,6 @@ const App = () => {
         <IconContext.Provider value={iconSetting}>
           <RouterProvider router={Router} />
         </IconContext.Provider>
-
         <GlobalStyles />
       </PersistGate>
     </Provider>

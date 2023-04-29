@@ -1,4 +1,5 @@
 ---
+sidebar_position: 5
 date: 2023-04-29
 modified: 2023-04-29
 ---
@@ -133,13 +134,6 @@ file 과 본인 밖에 없고 이름도 본인의 폴더명으로 지어져있�
 
 ### 코드
 
-가독성을 위해 조건 성립시에만 실행되는 변수선언을 밖으로 뺐다
-안으로 넣는게 최적화가 더 잘 되는건지 외부로 빼는게 더 잘되는 것일지 조금 햇갈렸지만
-#최적화
-
-좀 forEach 문 밖으로 빼면 확실히 최적화가 되는 것이였다
-file x 가 아니라 경로 수 x 가 되기 때문에
-
 ```js
 const pathTest = `${inDstFolder}\\_category_.yml`;
 const fileName = inDstFolder.split('\\').pop();
@@ -154,7 +148,7 @@ const yamlContent = yaml.dump({
 });
 if (!inDstFolder.endsWith('\\file') && !fs.existsSync(pathTest)) {
 	// file 일 경우 생성하지 않음
-	if (file === 'file' || fileName === file) {
+	if (file === 'file' ||  file === `${fileName}.md` ) {
 		console.log('생성 생략');
 		return;
 	}
@@ -167,3 +161,15 @@ if (!inDstFolder.endsWith('\\file') && !fs.existsSync(pathTest)) {
 	});
 }
 ```
+
+가독성을 위해 조건 성립시에만 실행되는 변수선언을 밖으로 뺐다
+안으로 넣는게 최적화가 더 잘 되는건지 외부로 빼는게 더 잘되는 것일지 조금 햇갈렸지만
+
+좀 forEach 문 밖으로 빼면 확실히 최적화가 되는 것이였다
+file x 가 아니라 경로 수 x 가 되기 때문에 된다
+#최적화
+
+file 을 출력해보니 확장자도 포함이여서 비교 구문에 확장자를 포함함
+
+기능도 정상 동작함을 확인함
+![](file/project-insert-category.png)
